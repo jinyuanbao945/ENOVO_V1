@@ -3,6 +3,7 @@ import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { Language, NavItem } from '../types';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Logo } from './Logo';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,12 +28,10 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 via-emerald-400 to-green-300 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-              E
-            </div>
+            <Logo className="h-10 w-10" />
             <div className="flex flex-col">
-              <span className="font-bold text-xl tracking-tight text-slate-800">EnovoGrid</span>
-              <span className="text-[10px] uppercase tracking-wider text-emerald-600 font-semibold">Microgrid Technology</span>
+              <span className="font-bold text-xl tracking-tight text-slate-900 leading-none">ENOVO Microgrid</span>
+              <span className="text-[10px] uppercase tracking-wider text-emerald-600 font-bold">Technology Co. Ltd.</span>
             </div>
           </Link>
 
@@ -64,7 +63,7 @@ const Header: React.FC = () => {
               </button>
 
               {isLangOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 py-1 focus:outline-none">
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 py-1 focus:outline-none z-50">
                   {Object.values(Language).map((lang) => (
                     <button
                       key={lang}

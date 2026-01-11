@@ -1,6 +1,7 @@
 import React from 'react';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Logo } from './Logo';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -10,9 +11,14 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-               <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">E</div>
-               <span className="text-white text-xl font-bold">EnovoGrid</span>
+            <div className="flex items-center gap-3 mb-4">
+               <div className="bg-white/10 p-2 rounded-full">
+                 <Logo className="w-8 h-8" />
+               </div>
+               <div className="flex flex-col">
+                  <span className="text-white text-lg font-bold leading-none">ENOVO Microgrid</span>
+                  <span className="text-emerald-500 text-[10px] uppercase font-bold tracking-wider">Technology Co. Ltd.</span>
+               </div>
             </div>
             <p className="text-slate-400 mb-6 max-w-sm">
               {t.footer.desc}
@@ -22,7 +28,6 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-4 uppercase tracking-wider text-sm">{t.footer.solutions}</h3>
             <ul className="space-y-2 text-sm">
-              {/* Using generic placeholders or safe mapped links if available. For now static links with dynamic text would need more complex structure, but sticking to existing solutions list from context is hard without array. I'll link to top level solutions */}
               <li><a href="#/solutions" className="hover:text-emerald-400 transition">{t.solutions.items[0].title}</a></li>
               <li><a href="#/solutions" className="hover:text-emerald-400 transition">{t.solutions.items[1].title}</a></li>
               <li><a href="#/solutions" className="hover:text-emerald-400 transition">{t.solutions.items[2].title}</a></li>
@@ -39,11 +44,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-emerald-500 shrink-0" />
-                <a href="mailto:info@enovogrid.com" className="hover:text-white">info@enovogrid.com</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
-                <span>+86 571 8888 8888</span>
+                <a href="mailto:auto@enovogrid.com" className="hover:text-white">auto@enovogrid.com</a>
               </li>
             </ul>
           </div>
